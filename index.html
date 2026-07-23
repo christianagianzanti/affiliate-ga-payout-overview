@@ -122,8 +122,7 @@
 <nav class="toc">
   <div class="wrap">
     <a href="#case">The Case</a>
-    <a href="#rates">Rate Modeling</a>
-    <a href="#migration">Program Migration</a>
+    <a href="#rates">Rate Modeling &amp; Cost Impact</a>
     <a href="#clawback">Clawback</a>
     <a href="#fraud">Fraud &amp; Risk</a>
     <a href="#questions">Open Questions</a>
@@ -160,63 +159,70 @@
     <p style="margin-top:16px"><a href="make-the-case.html" style="display:inline-block;background:var(--brand);color:#fff;padding:11px 18px;border-radius:9px;font-weight:600;font-size:14px">Read the one-page case →</a></p>
   </section>
 
-  <!-- RATES -->
+  <!-- RATE MODELING + COST IMPACT -->
   <section id="rates">
-    <div class="sec-head"><span class="sec-num">02</span><h2>Rate modeling</h2> <span class="chip wip">in progress</span></div>
-    <p class="sec-sub">Threaded off the Rate Planner site</p>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Rate modeling &amp; cost impact</h2> <span class="chip wip">in progress</span></div>
+    <p class="sec-sub">How GA rates are set, what we honor through the transition, and what it costs</p>
+
+    <div class="card">
+      <h3>Theory behind the model</h3>
+      <p>Start from <b>what we pay each partner today</b>, express it against their <b>cohorted gross-adds (GA)</b>, and <b>round down to the nearest $5</b> to set the GA rate. Rounding down keeps the program conservative while keeping partners roughly <b>whole</b> through the transition.</p>
+      <p><b>Full Price is honored through the tail.</b> Any Free Trial logged <b>before the Oct 1, 2026 transition</b> stays on the old Full Price model — we keep commissioning those shops as they mature to full price for up to <b>200 days</b>, so the last pre-transition cohort pays out around <b>Apr 2027</b>. Free Trials logged from Oct 1 onward pay on the GA model.</p>
+    </div>
+
     <div class="grid g2">
       <div class="card">
         <h3>"Whole Program on GA-Rate" model</h3>
         <p><b>Locked rates:</b> five managed partners <span class="tag">(names withheld)</span>.</p>
         <p><b>Prospective rates:</b> two prospective partners <span class="tag">(names withheld)</span>.</p>
         <p>Elasticity is applied to the locked set only.</p>
-        <div class="callout warn" style="margin-bottom:0">Known gaps: no 2027 monthly impact yet · no per-partner implementation date yet.</div>
       </div>
       <div class="card">
         <h3>Next upgrades <span class="tag">(Engineering)</span></h3>
         <ul class="clean">
-          <li><span class="dot">→</span><span>Plug into <b>MCP</b> to auto-model forward months</span></li>
-          <li><span class="dot">→</span><span><b>GA transition date per program</b>, with partner override</span></li>
-          <li><span class="dot">→</span><span>Extend the model through <b>2027</b></span></li>
-          <li><span class="dot">→</span><span><b>Per-partner elasticity</b> levers</span></li>
+          <li><span class="dot">&rarr;</span><span>Plug into <b>MCP</b> to auto-model forward months</span></li>
+          <li><span class="dot">&rarr;</span><span><b>GA transition date per program</b>, with partner override</span></li>
+          <li><span class="dot">&rarr;</span><span>Extend the model through <b>2027</b></span></li>
+          <li><span class="dot">&rarr;</span><span><b>Per-partner elasticity</b> levers</span></li>
         </ul>
       </div>
     </div>
-  </section>
 
-  <!-- MIGRATION -->
-  <section id="migration">
-    <div class="sec-head"><span class="sec-num">03</span><h2>Program Migration tab</h2> <span class="chip live">shipped live</span></div>
-    <p class="sec-sub">4th tab mirroring "Forecast &amp; Lift" — Paid Trial vs Full Price payouts, H2 2026</p>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Cost impact &mdash; Q4 2026</h3>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--brand);margin:6px 0 2px">TBD</div>
+        <p class="tag">Incremental payout cost of the Oct&ndash;Dec 2026 transition &mdash; to be finalized from the rate model.</p>
+      </div>
+      <div class="card">
+        <h3>Cost impact &mdash; 2027</h3>
+        <div style="font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--brand);margin:6px 0 2px">TBD</div>
+        <p class="tag">Full-year 2027 impact &mdash; pending the model extension through 2027.</p>
+      </div>
+    </div>
+
     <div class="card">
-      <h3>What shipped</h3>
-      <div class="grid g2" style="margin-top:6px">
-        <ul class="clean">
-          <li><span class="dot">•</span><span>Payouts by month (Paid Trial vs Full Price)</span></li>
-          <li><span class="dot">•</span><span>A Jul → Dec migration curve</span></li>
-        </ul>
-        <ul class="clean">
-          <li><span class="dot">•</span><span>By-region breakdown</span></li>
-          <li><span class="dot">•</span><span>KPIs + CSV export</span></li>
-        </ul>
-      </div>
+      <h3>Full Price &rarr; Paid Trial transition</h3>
       <div class="legend"><span><i class="sw pt"></i>Paid Trial payout share</span><span><i class="sw fp"></i>Full Price payout share</span></div>
-      <div class="curve" role="img" aria-label="Illustrative Jul to Dec migration from full-price to paid-trial payout share">
-        <!-- illustrative shape of the migration curve, not live figures -->
-        <div class="col"><div class="bars"><div class="bar pt" style="height:18%"></div><div class="bar fp" style="height:82%"></div></div><span class="mlabel">Jul</span></div>
-        <div class="col"><div class="bars"><div class="bar pt" style="height:34%"></div><div class="bar fp" style="height:66%"></div></div><span class="mlabel">Aug</span></div>
-        <div class="col"><div class="bars"><div class="bar pt" style="height:50%"></div><div class="bar fp" style="height:50%"></div></div><span class="mlabel">Sep</span></div>
-        <div class="col"><div class="bars"><div class="bar pt" style="height:66%"></div><div class="bar fp" style="height:34%"></div></div><span class="mlabel">Oct</span></div>
-        <div class="col"><div class="bars"><div class="bar pt" style="height:80%"></div><div class="bar fp" style="height:20%"></div></div><span class="mlabel">Nov</span></div>
-        <div class="col"><div class="bars"><div class="bar pt" style="height:92%"></div><div class="bar fp" style="height:8%"></div></div><span class="mlabel">Dec</span></div>
+      <div class="curve" role="img" aria-label="Illustrative October 2026 to June 2027 migration from full-price to paid-trial payout share, with full price fully phased out by April 2027">
+        <!-- illustrative shape; Full Price fully phases out at the start of Apr 2027 -->
+        <div class="col"><div class="bars"><div class="bar pt" style="height:20%"></div><div class="bar fp" style="height:80%"></div></div><span class="mlabel">Oct</span></div>
+        <div class="col"><div class="bars"><div class="bar pt" style="height:35%"></div><div class="bar fp" style="height:65%"></div></div><span class="mlabel">Nov</span></div>
+        <div class="col"><div class="bars"><div class="bar pt" style="height:50%"></div><div class="bar fp" style="height:50%"></div></div><span class="mlabel">Dec</span></div>
+        <div class="col"><div class="bars"><div class="bar pt" style="height:66%"></div><div class="bar fp" style="height:34%"></div></div><span class="mlabel">Jan</span></div>
+        <div class="col"><div class="bars"><div class="bar pt" style="height:82%"></div><div class="bar fp" style="height:18%"></div></div><span class="mlabel">Feb</span></div>
+        <div class="col"><div class="bars"><div class="bar pt" style="height:93%"></div><div class="bar fp" style="height:7%"></div></div><span class="mlabel">Mar</span></div>
+        <div class="col"><div class="bars"><div class="bar pt" style="height:100%"></div><div class="bar fp" style="height:0%"></div></div><span class="mlabel">Apr</span></div>
+        <div class="col"><div class="bars"><div class="bar pt" style="height:100%"></div><div class="bar fp" style="height:0%"></div></div><span class="mlabel">May</span></div>
+        <div class="col"><div class="bars"><div class="bar pt" style="height:100%"></div><div class="bar fp" style="height:0%"></div></div><span class="mlabel">Jun</span></div>
       </div>
-      <p class="tag" style="margin-top:12px">Curve above is an illustrative shape of the Jul→Dec transition — live figures live in the Program Migration tab, not in this summary.</p>
+      <p class="tag" style="margin-top:12px">Illustrative shape of the Oct 2026 &rarr; Jun 2027 transition. New Free Trials move to Paid Trial / GA payout from Oct 1, 2026; Full Price payouts tail off as pre-transition cohorts mature and are fully phased out by the start of Apr 2027. Live figures live in the Program Migration tab.</p>
     </div>
   </section>
 
   <!-- CLAWBACK -->
   <section id="clawback">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Clawback mechanism</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Clawback mechanism</h2></div>
     <p class="sec-sub">Explained by Engineering</p>
     <div class="card">
       <p style="font-size:16px;color:var(--ink)">The clawback event fires <b>20 days after a paid trial is paid</b>: if the shop has cancelled or frozen, the up-front commission is reversed back off the partner.</p>
@@ -229,7 +235,7 @@
 
   <!-- FRAUD -->
   <section id="fraud">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Fraud &amp; risk</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Fraud &amp; risk</h2></div>
     <p class="sec-sub">Because money moves up-front, the guardrails matter</p>
     <div class="grid g2">
       <div class="card">
@@ -258,7 +264,7 @@
 
   <!-- QUESTIONS -->
   <section id="questions">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Open questions</h2> <span class="chip open">unresolved</span></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Open questions</h2> <span class="chip open">unresolved</span></div>
     <p class="sec-sub">Raised by Program lead — still to be decided</p>
     <div class="card">
       <div class="qa"><p class="q"><span class="qmark">Q</span>90-day free-to-paid — how does it interact with the GA payout?</p></div>
@@ -271,7 +277,7 @@
 
   <!-- ARTIFACTS -->
   <section id="artifacts">
-    <div class="sec-head"><span class="sec-num">07</span><h2>Artifacts &amp; owners</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Artifacts &amp; owners</h2></div>
     <p class="sec-sub">Where the work actually lives</p>
     <table>
       <thead><tr><th>Artifact</th><th>What it is</th><th>Owner</th><th>Status</th></tr></thead>
