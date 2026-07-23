@@ -3,8 +3,7 @@
 A two-page static microsite summarizing the initiative to move affiliate
 commissions onto a Paid Trial / gross-add (GA) payout model.
 
-- `index.html` — initiative overview (workstreams, rate modeling, clawback, fraud & risk, open questions)
-- `make-the-case.html` — one-page leadership leave-behind
+- `index.html` — single-page initiative overview (rate modeling & cost impact, clawback, fraud & risk, open questions, artifacts)
 
 **This is a public, redacted version.** Specific financial figures, iCAC,
 partner names, internal repo/PR references, and individual contributor names
